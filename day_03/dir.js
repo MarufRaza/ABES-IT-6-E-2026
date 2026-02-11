@@ -28,4 +28,27 @@ try {
 }
 
 //async
+const fs = require("fs").promises;
+
+async function manageFiles() {
+  try {
+    await fs.mkdir("async_folder", { recursive: true });
+
+    const files = await fs.readdir("./");
+    console.log(files);
+
+    await fs.writeFile("async_folder/test.txt", "Learning Node.js fs\nUsing fs/promises");
+
+    const data = await fs.readFile("async_folder/test.txt", "utf8");
+    console.log(data);
+
+    const stats = await fs.stat("async_folder/test.txt");
+    console.log(stats.isFile());
+
+  } catch (err) {
+    console.log(err.message);
+  }
+}
+
+manageFiles();
 
