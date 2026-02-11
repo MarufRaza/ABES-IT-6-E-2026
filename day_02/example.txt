@@ -1,0 +1,1 @@
+this data has been written through sync func of fs modulethis data has been appended through sync func of fs module
