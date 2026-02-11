@@ -8,4 +8,24 @@ const makeDir = async(path)=>{
         console.log("unable to amkke dir");
     }
 }
-makeDir("../day_04");
+// makeDir("../day_04");
+
+//sync
+const fs = require('fs');
+
+try {
+    fs.mkdirSync('my_folder'); 
+    const files = fs.readdirSync('./');
+    console.log(files);
+
+    fs.writeFileSync('my_folder/note.txt', 'Hello World!');
+    fs.appendFileSync('my_folder/note.txt', '\nAppended text.');
+    
+    const content = fs.readFileSync('my_folder/note.txt', 'utf-8');
+    console.log(content);
+} catch (err) {
+    console.error(err.message);
+}
+
+//async
+
