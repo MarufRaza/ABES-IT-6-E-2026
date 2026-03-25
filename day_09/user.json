@@ -48,9 +48,15 @@
     "gender": "Male"
   },
   {
-    "name": "Cary Dowsett",
-    "email": "cdowsett8@blog.com",
-    "password": "aD1/k5i=T\"n",
-    "gender": "Female"
+    "name": "abc",
+    "email": "cclimpson0@auda.org.au",
+    "password": "1345",
+    "gender": "f"
+  },
+  {
+    "name": "abc",
+    "email": "cclimpson0@auda",
+    "password": "1345",
+    "gender": "f"
   }
 ]

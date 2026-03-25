@@ -1,28 +1,18 @@
-import { readfile, writeFile } from "../day_04/readAndwriteFile.js";
-
-const file = "../day_04/student.json";
-
+import { readFile, writeFile } from "../day_04/readAndWriteFile.js";
+const FILE = "../day_04/students.json";
 const deleteFileData = async (id) => {
-  try {
-    const students = await readfile(file);
-    console.log("type:", students);
-
+    const students = await readFile(FILE);
     if (!students) {
-      console.log("user is not existing");
-      return;
+        console.log("user is not existing");
+        return;
     }
-
     const user = students.filter((student) => student.id === id);
     if (user.length === 0) {
-      console.log("user is not existing");
+        console.log("user is not existing");
     } else {
-      const filterData = students.filter((student) => student.id !== id);
-      await writeFile(file, JSON.stringify(filterData, null, 2));
-      console.log(filterData);
+        const filteredData = students.filter((student) => student.id !== id);
+        await writeFile(FILE, JSON.stringify(filteredData, null, 2))
     }
-  } catch (error) {
-    console.error("Error:", error);
-  }
-};
 
-deleteFileData(1);
+}
+deleteFileData(2);

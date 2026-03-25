@@ -1,11 +1,14 @@
-import fs from "fs";
-const makeDirSync = (path) => {
-    try{
-        fs.mkdirSync(path);
-        console.log("Directory has been created successfully");
-    }catch(error){
-        console.log("Unable to create dir");
+import fs from "fs/promises";
+import fsSync from "fs";
+
+const makeDir = async (path) => {
+    try {
+        await fs.mkdir(path);
+        console.log("Directory haas been  created successfully");
+    } catch (error) {
+        console.log("unable to amkke dir");
     }
 }
+// makeDir("../day_04");
 
-makeDirSync("../day_05");
+
